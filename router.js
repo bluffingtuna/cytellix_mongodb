@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var User = require('./user');
+const express = require('express');
+const router = express.Router();
+const User = require('./user');
 
 
 // GET route to serve index.html as entry point

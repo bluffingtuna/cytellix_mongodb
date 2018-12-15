@@ -1,13 +1,14 @@
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
-var routes = require('./router');
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const routes = require('./router');
+const port = process.env.PORT;
 
 //connect to MongoDB
-mongoose.connect('mongodb://localhost/testForAuth');
+mongoose.connect('mongodb://heroku_6l7zxlz7:Wlstjr1@ds141633.mlab.com:41633/heroku_6l7zxlz7');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
@@ -46,6 +47,6 @@ app.use(function (err, req, res, next) {
 });
 
 // listen on port 3000
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Express app listening on port 3000')
 })
