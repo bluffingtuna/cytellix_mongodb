@@ -6,7 +6,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const routes = require('./router');
 const port = process.env.PORT;
-const mongodb = MONGODB_URI;
+const mongodb = process.env.MONGODB_URI;
 
 //connect to MongoDB
 mongoose.connect(mongodb);
