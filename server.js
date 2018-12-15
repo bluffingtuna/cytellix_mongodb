@@ -8,7 +8,7 @@ const routes = require('./router');
 const port = process.env.PORT;
 
 //connect to MongoDB
-mongoose.connect('mongodb://heroku_6l7zxlz7:Wlstjr1@ds141633.mlab.com:41633/heroku_6l7zxlz7');
+mongoose.connect('mongodb://cytellix:cytellix1@ds141633.mlab.com:41633/heroku_6l7zxlz7');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
